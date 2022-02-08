@@ -1,0 +1,53 @@
+{
+	"baseFile": "70074cee4faf12fa1f11769577fffd07c899ae692333ed96db93bdfb10a52d40",
+	"draw": [
+		{
+			"page": 0,
+			"type": "rect",
+			"location": "50,50,200,200",
+			"strokeColor": "#ac35b7",
+			"fillColor": null ,
+			"strokeOpacity": 1,
+			"fillOpacity": 0.5,
+			"dashes": [1,2,1],
+			"borderWidth": 2
+		},
+		{
+			"page": 0,
+			"type": "oval",
+			"location": "50,50,200,200",
+			"strokeColor": "#ac35b7",
+			"fillColor": null ,
+			"strokeOpacity": 1,
+			"fillOpacity": 0.5,
+			"dashes": [1,2,1],
+			"borderWidth": 2
+		},
+		{
+			"page": 0,
+			"type": "circle",
+			"center": "50,50",
+			"radius": 30,
+			"strokeColor": "#ac35b7",
+			"fillColor": null ,
+			"strokeOpacity": 1,
+			"fillOpacity": 0.5,
+			"dashes": [1,2,1],
+			"borderWidth": 2
+		},
+		{
+			"page": 0,
+			"type": "text",
+			"text": "hello world",
+			"fontColor": "#000000",
+			"fontSize": 11,
+			"location": "50,50,200,200",
+			"strokeColor": "#ac35b7",
+			"fillColor": null ,
+			"strokeOpacity": 1,
+			"fillOpacity": 0.5,
+			"dashes": [1,2,1],
+			"borderWidth": 2
+		}
+	]
+}
