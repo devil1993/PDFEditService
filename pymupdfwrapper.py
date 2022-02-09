@@ -21,12 +21,25 @@ TEXT = "text"
 FONT_COLOR = "fontColor"
 FONT_SIZE = "fontSize"
 
+def draw_rect(page, drawing):
+	pass
+
+def draw_oval(page, drawing):
+	pass
+
+def draw_circle(page, drawing):
+	pass
+
+def draw_text(page, drawing):
+	pass
+
+
 def draw_on_pdf(base_file, draw_details, output_name):
 	import fitz
 	doc = fitz.open(base_file)
-	if(not doc.isPDF):
+	if (not doc.isPDF) :
 		return (False, "The base document is not pdf.")	
-	if(len(draw_details) = 0):
+	if (len(draw_details) == 0) :
 		return (False, "No drawing detail provided.")
 	drawing_success = True
 	try:
@@ -38,16 +51,18 @@ def draw_on_pdf(base_file, draw_details, output_name):
 			drawing_success = True
 			if(drawing_type not in ALLOWED_DRAWING_TYPES):
 				return (False, "Drawing type " + drawing_type + " is not supported")
-			if(drawing_type = DRAWING_TYPE_RECT):
+			if (drawing_type == DRAWING_TYPE_RECT) :
 				drawing_success = draw_rect(page, drawing)
-			elif(drawing_type = DRAWING_TYPE_OVAL):
+			elif (drawing_type == DRAWING_TYPE_OVAL) :
 				drawing_success = draw_oval(page, drawing)	
-			elif(drawing_type = DRAWING_TYPE_CIRCLE):
+			elif (drawing_type == DRAWING_TYPE_CIRCLE) :
 				drawing_success = draw_circle(page, drawing)	
-			elif(drawing_type = DRAWING_TYPE_TEXT):
+			elif (drawing_type == DRAWING_TYPE_TEXT) :
 				drawing_success = draw_text(page, drawing)	
 			if(not drawing_success):
 				return (False, "Failed drawing " + drawing_type + " at location " + drawing[LOCATION])
+			else:
+				doc.save(output_name)
 	except Exception:
 		pass
 	finally:
