@@ -45,3 +45,6 @@ def draw():
 		return make_response(out_file_name, 200)
 	else:
 		return make_response(result[1], 500)
+
+if __name__ == "__main__":
+	app.run(debug=True)
