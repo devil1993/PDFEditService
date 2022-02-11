@@ -1,3 +1,3 @@
 set FLASK_APP=PDFEditService
 
-flask run
+python -m flask run

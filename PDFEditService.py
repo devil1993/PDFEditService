@@ -7,8 +7,6 @@ from fileservicefactory import get_file_service, FIREBASE, SYSTEM
 
 app = Flask(__name__)
 
-fileservice = get_file_service(SYSTEM)
-
 @app.route('/')
 def index():
 	return make_response({"message": "hello from Flask"}, 200)
@@ -16,6 +14,8 @@ def index():
 
 @app.route('/files', methods=['POST', 'GET'])
 def upload_file():
+	
+	fileservice = get_file_service(SYSTEM)
 	if(request.method == "POST"):
 		f = request.files['file']
 		hash = fileservice.save_file(f)
@@ -32,6 +32,7 @@ def upload_file():
 
 @app.route('/draw', methods=['POST'])
 def draw():
+	fileservice = get_file_service(SYSTEM)	
 	from pymupdfwrapper import draw_on_pdf
 	draw_data = request.files['draw'].read()
 	draw_json_data = json.loads(draw_data)

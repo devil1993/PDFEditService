@@ -8,10 +8,12 @@ class SystemFileStore(FileServiceInterface):
 
 	def save_file(self, file_storage_object) -> str:
 		fstream = file_storage_object.read()
-		print(fstream)
+		print("File read")
+		# print(fstream)
 		hash = compute_hash(fstream)
+		print("Hash Computed: ")
 		print(hash)
-		path = os.path.join(self.basedir, hash)
+		path = os.path.join(self.basedir, str(hash))
 		f = open(path, 'wb')
 		f.write(fstream)
 		f.close()
